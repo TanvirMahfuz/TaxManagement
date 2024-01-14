@@ -1,0 +1,112 @@
+/* Center the user information table */
+
+*{
+    font-family: 'Mulish', sans-serif;
+}
+
+.container {
+    text-align: left; /* Center-align the content within the container */
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+
+/* Style the table */
+.table {
+    border-collapse: collapse;
+    width: 550px;        /* Make the table take up the full container width */
+    max-width: 550px;   /* Set a maximum width for the table */
+    margin: 0 auto;     /* Center the table horizontally */
+    /*border: 1px solid #fff;*/
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Style table headers (th) */
+
+/* Style table rows (td) */
+.table td {
+    padding: 15px;  /* Add some padding for better spacing */
+    padding-left: 30px;
+    background-color: #f7f7f7;
+    
+}
+.table th {
+    padding: 15px;  /* Add some padding for better spacing */
+    padding-left: 30px;
+    background-color: #b2c9c9;
+    text-align: center;
+}
+
+.custom-navbar .nav-link {
+    font-family: 'Mulish', sans-serif;
+    position: relative;
+    font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #1b6777;
+}
+.custom-navbar .nav-link::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px; 
+    background-color: #1b6777;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.custom-navbar .nav-link:hover::before {
+    width: 100%;
+}
+.website-logo {
+    margin-left: 0;
+    height: 50px;
+    width: 170px;
+}
+#active-link {
+    border-bottom: 2px solid #1b6777;
+}
+
+#username {
+    color: #1b6777;
+    margin: 0 20px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+#logout {
+    color: #1f1f1f;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.fa-user {
+    margin-left: 20px;
+    padding: 0;
+    color: #1b6777;
+}
+.title {
+    padding-top: 0;
+    font-size: 30px;
+    margin: 30px 0;
+}
+.view-profile{
+    display: inline-block;
+    padding: 9px 12px;
+    font-size: 16px;
+    background-color: #29a3b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: dance 0.3s infinite alternate;
+}
+.view-profile:hover{
+    background-color: #2193a4;
+}

@@ -1,0 +1,211 @@
+*{
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+}
+
+.custom-navbar .nav-link {
+    font-family: 'Mulish', sans-serif;
+    position: relative;
+    font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #1b6777;
+}
+.custom-navbar .nav-link::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px; 
+    background-color: #1b6777;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.custom-navbar .nav-link:hover::before {
+    width: 100%;
+}
+.website-logo {
+    margin-left: 0;
+    height: 50px;
+    width: 170px;
+}
+#active-link {
+    border-bottom: 2px solid #1b6777;
+}
+#username {
+    color: #1b6777;
+    margin: 0 20px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    text-decoration: none;
+}
+#username:hover {
+    text-decoration: underline;
+}
+#logout {
+    color: #1f1f1f;
+    font-weight: 500;
+    text-decoration: none;
+}
+#logout:hover {
+    text-decoration: underline;
+    text-decoration-color: #1b6777;;
+}
+.fa-user {
+    margin-left: 20px;
+    padding: 0;
+    color: #1b6777;
+}
+/***/
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+}
+
+
+/* Make the table full width on small screens */
+@media (max-width: 768px) {
+    table {
+        width: 100%; /* Make the table take up the full width of the screen */
+    }
+
+    td {
+        padding: 30px 15px; /* Increase cell padding and width on small screens */
+    }
+}
+
+
+tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+tr:nth-child(odd){
+    background-color: #daeaeb;
+}
+
+.view-profile{
+    display: inline-block;
+    padding: 9px 12px;
+    font-size: 16px;
+    background-color: #29a3b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: dance 0.3s infinite alternate;
+}
+.view-profile:hover{
+    background-color: #2193a4;
+}
+
+@keyframes dance {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-2px);
+    }
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+.name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/***/
+
+.search{
+    float:right;
+    margin:7px;
+}
+     
+.search button{
+    background-color: #1a5c69;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    float: right;
+    padding: 5px 10px;
+    margin-right: 16px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style for the search container */
+.search-container {
+    position: relative;
+    display: inline-block;
+    margin: 30px 0;
+  }
+  
+/* Style for the search input */
+.search-container input[type="text" ]{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+}
+.search-container input[type="text"]:focus {
+    outline: none;
+}
+
+.search-container input[type="text"]:focus {
+    outline: 2px solid #2a99b0;
+}
+
+/* styling search button */
+.search-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px 14px;
+    background-color: #2a99b0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Styling search icon inside the button */
+.fa {
+    color: white;
+    font-size: 16px;
+}
+.fa-user {
+    margin-left: 20px;
+    padding: 0;
+    color: #1b6777;
+}
+
+/* Hover effect for the button */
+.search-container button:hover {
+    background-color: #2890a4; /* Change this to a darker shade for hover effect */
+}

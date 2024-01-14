@@ -1,0 +1,93 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+p{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    /*font-size: 5vw;*/
+    font-weight: 200;
+    color:#effefe;
+    /*margin-bottom: 60px;*/
+    line-height: 5px;
+}
+.custom-navbar .nav-link {
+    font-family: 'Mulish', sans-serif;
+    color: #1F1F1F;
+    position: relative;
+
+}
+
+.custom-navbar .nav-link::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #1b6777;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.custom-navbar .nav-link:hover::before {
+    width: 100%;
+}
+
+#wall-elements{
+    font-size: 45px;
+    font-weight: 200;
+    padding: 0px 0px;
+    color: #b4adad;
+    margin: 60px 20px;
+}
+.login-option{
+    font-size: 1vw;
+    margin: 0px 40px;
+    margin-top: 50px;
+
+}
+#wall-elements .text1{
+    font-weight: 100;
+    font-size: 40px;
+    color: inherit;
+}
+.keyword{
+    font-weight: 300;
+    font-size: 60px;
+}
+.text2{
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.website-logo{
+    height: 50px;
+    width: 170px;
+}
+/* color schemes #507B84 #174759 #1C5D6B
+#A86530*/
+#home-wall{
+    width: 100vw;
+    height: 91vh;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../Images/justtry.jpg');
+    font-weight: 200;
+}
+button{
+    margin: 25px 10px;
+}
+#signup{
+    margin-left: 35px;
+}
+
+#login-button{
+    color: #b4adad;
+}
+#active-link {
+    border-bottom: 2px solid #1b6777;
+}
+

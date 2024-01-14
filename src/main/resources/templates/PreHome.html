@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as a Client or Lawyer</title>
+    <style>
+        *{
+            font-family: 'Mulish', sans-serif;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        p{
+            padding: 20px;
+        }
+
+
+        .container-main {
+            border: 2px solid #dedbdb;
+            border-radius: 10px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .div-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .div-container div {
+            width: 280px;
+            height: 150px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto 10px;
+        }
+
+        .div-container div:hover{
+            scale: 1.02;
+            border-color: #238497;
+            background-color: #e4f9fd;
+        }
+        .div-container div.selected {
+            scale: 1.02;
+            border-color: #238497;
+            background-color: #e4f9fd;
+        }
+
+        .button {
+            font-size: 16px;
+            min-width: 200px;
+            margin-top: 50px;
+            background-color: #a7a7a7ee;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: not-allowed;
+            border-radius: 25px;
+        }
+
+        .button.active {
+            background-color: #1b6777;
+            cursor: pointer;
+        }
+
+        .login-link {
+            text-decoration: none;
+            color: #1b6777;
+        }
+
+        .login-link:hover {
+            color: #1b6777;
+            text-decoration: underline;
+        }
+
+        .website-logo {
+            margin-left: 0;
+            height: 50px;
+            width: 170px;
+        }
+        .custom-navbar .nav-link {
+            font-family: 'Mulish', sans-serif;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #1b6777;
+        }
+        .custom-navbar .nav-link::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #1b6777;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .custom-navbar .nav-link:hover::before {
+            width: 100%;
+        }
+        .logo-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+        }
+        .website-logo {
+            margin-left: 0;
+            height: 50px;
+            width: 170px;
+        }
+        #active-link {
+            border-bottom: 2px solid #1b6777;
+        }
+
+        /** media queries **/
+        @media (max-width: 768px) {
+            .div-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .div-container div {
+                width: 300px;
+                height: 150px;
+                font-size: 18px;
+            }
+        }
+    </style>
+
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200&family=Mulish:wght@200;300;500;600&display=swap" rel="stylesheet">
+
+    <!--fontawesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+<!--navbar-->
+<!--navbar-->
+<!--navbar-->
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+    <div class="container-fluid">
+        <a href="/" class="logo-container">
+            <img src="../bootstrap/Images/company-logo.png" class="website-logo" alt="logo">
+        </a>
+    </div>
+
+</nav>
+
+<div class="container-main">
+    <div class="div-container">
+        <div class="client">
+            <img src="../bootstrap/Images/tax-icon.png" alt="Flaticon Icon" height="70px" width="70px">
+            <p>I'm a tax payer,<br> looking for a lawyer.</p>
+        </div>
+        <div class="lawyer">
+            <img src="../bootstrap/Images/agreement-icon.png" alt="Flaticon Icon" height="60px" width="60px">
+            <p>I'm a lawyer,<br> looking for a job.</p>
+        </div>
+    </div>
+
+    <form th:action="@{/join}" method="post">
+        <input  type="hidden" name="userType" id="userType" value="" />
+        <button class="button" disabled>Create Account</button>
+    </form>
+
+    <!--<button class="btn btn-primary" id="joinButton" data-disabled="true">Join as a Client</button>-->
+
+    <p> Already have an account? <a href="/login" class="login-link">Log in</a></p>
+
+</div>
+
+<!--js scripts-->
+
+<script>
+    const clientDiv = document.querySelector(".client");
+    const lawyerDiv = document.querySelector(".lawyer");
+    const joinButton = document.querySelector(".button");
+    const userTypeInput = document.querySelector("#userType");
+
+    clientDiv.addEventListener("click", () => {
+        clientDiv.classList.add("selected");
+        lawyerDiv.classList.remove("selected");
+        joinButton.innerText = "Join as a Client";
+        joinButton.classList.add("active");
+        lawyerDiv.classList.remove("active");
+        joinButton.disabled = false; // Enable the button when "Client" is selected
+        userTypeInput.value = "client";
+    });
+
+    lawyerDiv.addEventListener("click", () => {
+        lawyerDiv.classList.add("selected");
+        clientDiv.classList.remove("selected");
+        joinButton.innerText = "Join as a Lawyer";
+        joinButton.classList.add("active");
+        clientDiv.classList.remove("active");
+        joinButton.disabled = false; // Enable the button when "Lawyer" is selected
+        userTypeInput.value = "lawyer";
+    });
+
+    /**joinButton.addEventListener("click", () => {
+                alert("Button Clicked!"); // You can replace this with your desired action
+            });**/
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>

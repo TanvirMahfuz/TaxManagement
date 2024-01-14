@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+
+  <!--bootstrap 5 cdn-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <!--CSS FILE-->
+  <link rel="stylesheet" href="../bootstrap/CSS/profile.css">
+  <link rel="stylesheet" href="../bootstrap/CSS/deletionPopup.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;1,200&family=Mulish:wght@200;300;500;600&display=swap" rel="stylesheet">
+
+  <!--fontawesome icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<!--navbar-->
+<nav class="navbar navbar-expand-md navbar-light custom-navbar">
+  <div class="container-fluid">
+    <a href="/ViewUserProfile" class="brand-logo">
+      <img src="../bootstrap/Images/company-logo.png" class="website-logo" alt="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="main-nav">
+      <ul class="navbar-nav">
+        <li class="nav-item mx-3">
+          <a href="/Home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a href="/seeLawyerList" class="nav-link">See Lawyers</a>
+        </li>
+        <li class="nav-item mx-3">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+        <!--<li class="nav-item mx-3">
+            <a href="#" class="nav-link">Log out</a>
+        </li>-->
+      </ul>
+      <div>
+        <i class="fa fa-solid fa-user"></i>
+        <a href="/ViewUserProfile" id="username"><span th:text="${message}">Laura Foe</span> <!--user fullname--></a>
+        <!--<i class="fa-solid fa-right-from-bracket"></i>-->
+        <i class="fa fa-solid fa-arrow-right-from-bracket"></i>
+        <a href="/" id="logout"> Log out</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h4 class="profile-name text-center" th:text="${message}">Laura Foe</h4>
+  <div class="row justify-content-center">
+    <div class="col-md-8 profile-card">
+
+      <div class="user-info text-start">
+        <p><strong>Main Salary:</strong> <span th:text="${taxFormTH.getMain_salary()}"></span></p>
+        <p><strong>Forgiven Salary:</strong> <span th:text="${taxFormTH.getForgiven_main_salary()}"></span></p>
+        <p><strong>Taxable Salary:</strong> <span th:text="${taxFormTH.getTaxable_main_salary()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Special Salary:</strong> <span th:text="${taxFormTH.getSpecial_salary()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_special_salary()}"></span></p>
+        <p><strong>Taxable Special Salary:</strong> <span th:text="${taxFormTH.getTaxable_special_salary()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Salary that was due:</strong> <span th:text="${taxFormTH.getSalary_dues()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_salary_dues()}"></span></p>
+        <p><strong>Taxable due-Salary:</strong> <span th:text="${taxFormTH.getTaxable_salary_dues()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Bonus Salary:</strong> <span th:text="${taxFormTH.getBonusSalary()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_bonus_salary()}"></span></p>
+        <p><strong>Taxable Bonus Salary:</strong> <span th:text="${taxFormTH.getTaxable_bonus_salary()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Dearness Allowance:</strong> <span th:text="${taxFormTH.getDearness_allowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_dearness_allowance()}"></span></p>
+        <p><strong>Taxable Dearness Allowance:</strong> <span th:text="${taxFormTH.getTaxable_dearness_allowance()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Rent Allowance:</strong> <span th:text="${taxFormTH.getRent_allowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_rent_allowance()}"></span></p>
+        <p><strong>Taxable Rent Allowance:</strong> <span th:text="${taxFormTH.getRent_allowance()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Medical Allowance:</strong> <span th:text="${taxFormTH.getMedical_allowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_medical_allowance()}"></span></p>
+        <p><strong>Taxable Medical Allowance:</strong> <span th:text="${taxFormTH.getTaxable_medical_allowance()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Additional Medical Allowance(heart,eye,liver,cancer surgery):</strong> <span th:text="${taxFormTH.getAdditionalMedicalAllowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_additionalMedicalAllowance()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_additionalMedicalAllowance()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Rewards :</strong> <span th:text="${taxFormTH.getEarnedReward()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_earnedReward()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_earnedReward()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Over Time Fee:</strong> <span th:text="${taxFormTH.getOverTimeFee()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_overTimeFee()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_overTimeFee()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Travel Allowance:</strong> <span th:text="${taxFormTH.getTravel_allowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_travel_allowance()}"></span></p>
+        <p><strong>Taxable Travel Allowance:</strong> <span th:text="${taxFormTH.getTaxable_travel_allowance()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Festival Allowance:</strong> <span th:text="${taxFormTH.getFestival_allowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_festival_allowance()}"></span></p>
+        <p><strong>Taxable Festival Allowance:</strong> <span th:text="${taxFormTH.getTaxable_festival_allowance()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Attendant Allowance:</strong> <span th:text="${taxFormTH.getAttendant_allowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_attendant_allowance()}"></span></p>
+        <p><strong>Taxable Attendant Allowance:</strong> <span th:text="${taxFormTH.getTaxable_attendant_allowance()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>On Leave Allowance:</strong> <span th:text="${taxFormTH.getOnLeaveAllowance()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_onLeave_allowance()}"></span></p>
+        <p><strong>Taxable On Leave Allowance:</strong> <span th:text="${taxFormTH.getTaxable_onLeave_allowance()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Savings:</strong> <span th:text="${taxFormTH.getSavedInFutureFund()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_savedInFutureFund()}"></span></p>
+        <p><strong>Taxable Savings:</strong> <span th:text="${taxFormTH.getTaxable_savedInFutureFund()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Interest From Savings:</strong> <span th:text="${taxFormTH.getInterestFromFutureFund()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_interestFromFutureFund()}"></span></p>
+        <p><strong>Taxable Interest From Savings:</strong> <span th:text="${taxFormTH.getTaxable_interestFromFutureFund()}"></span></p>
+      </div>
+    </div>
+
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Usage of Office Vehicle:</strong> <span th:text="${taxFormTH.getUseOfOfficeVehicle()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_useOfOfficeVehicle()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_useOfOfficeVehicle()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Usage of Office rented Property:</strong> <span th:text="${taxFormTH.getUseOfOfficeVehicle()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_useOfOfficeHome()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_useOfOfficeHome()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Other Advantages from Company:</strong> <span th:text="${taxFormTH.getOtherAdvantagesFromCompany()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_otherAdvantagesFromCompany()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_otherAdvantagesFromCompany()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+
+      <div class="user-info text-start">
+        <p><strong>Vacation Monetization:</strong> <span th:text="${taxFormTH.getVacation_monetization()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_vacation_monetization()}"></span></p>
+        <p><strong>Taxable Vacation Monetization:</strong> <span th:text="${taxFormTH.getTaxable_vacation_monetization()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+
+      <div class="user-info text-start">
+        <p><strong>Gratuity:</strong> <span th:text="${taxFormTH.getGratuity()}"></span></p>
+        <p><strong>Forgiven Gratuity:</strong> <span th:text="${taxFormTH.getForgiven_gratuity()}"></span></p>
+        <p><strong>Taxable Gratuity:</strong> <span th:text="${taxFormTH.getTaxable_gratuity()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Workers' Participation Fund:</strong> <span th:text="${taxFormTH.getWorkers_participation_fund()}"></span></p>
+        <p><strong>Forgiven Tax:</strong> <span th:text="${taxFormTH.getForgiven_workers_participation_fund()}"></span></p>
+        <p><strong>Taxable :</strong> <span th:text="${taxFormTH.getTaxable_workers_participation_fund()}"></span></p>
+      </div>
+    </div>
+    <div class="col-md-8 profile-card">
+      <div class="user-info text-start">
+        <p><strong>Total taxable Income :</strong> <span th:text="${taxFormTH.getTotal_taxable()}"></span></p>
+        <p><strong>Total Income Tax :</strong> <span th:text="${taxFormTH.getTotalTax()}"></span></p>
+    </div>
+
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

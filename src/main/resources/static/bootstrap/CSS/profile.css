@@ -1,0 +1,124 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 200;
+}
+a {
+    text-decoration: none;
+}
+
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px auto;
+    max-width: 500px;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.profile-name {
+    margin: 20px 0;
+}
+.profile-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto 20px;
+}
+
+.user-info{
+    font-size: 19px;
+    margin-bottom: 20px;
+    padding: 0 30px;
+}
+
+#edit-profile-button {
+    background-color: #1b6777;
+    color: #fff;
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#edit-profile-button:hover {
+    background-color: #1a5c69;
+}
+
+#delete-account-button {
+    background-color: #1f1f1f;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+#delete-account-button:hover {
+    background-color: #000;
+}
+
+/* styling navbar */
+
+.custom-navbar .nav-link {
+    font-family: 'Mulish', sans-serif;
+    position: relative;
+    font-weight: 500;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #1b6777;
+}
+.custom-navbar .nav-link::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #1b6777;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.custom-navbar .nav-link:hover::before {
+    width: 100%;
+}
+.website-logo {
+    margin-left: 0;
+    height: 50px;
+    width: 170px;
+}
+#active-link {
+    border-bottom: 2px solid #1b6777;
+}
+
+#username {
+    color: #1b6777;
+    margin: 0 20px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+}
+#username:hover {
+    text-decoration: underline;
+}
+
+#logout {
+    color: #1f1f1f;
+    font-weight: 500;
+}
+#logout:hover {
+    text-decoration: underline;
+    text-decoration-color: #1b6777;;
+}
+.fa-user {
+    margin-left: 20px;
+    padding: 0;
+    color: #1b6777;
+}
